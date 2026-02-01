@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про Клуб | Royal Team ITF</title>
+    <link rel="stylesheet" href="RoyalClub.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="about-page">
+
+    <header>
+        <div class="header-content">
+            <a href="RoyalHome.html" class="logo">
+                <img src="Logo.jpg" alt="Logo" class="logo-image">
+                Royal <span>Team</span>
+            </a>
+            
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-list">
+                <li><a href="RoyalHome.html" class="nav-link">Головна</a></li>
+                <li><a href="RoyalClub.html" class="nav-link">Про Клуб</a></li>
+                <li><a href="RoyalCoach.html" class="nav-link">Тренер</a></li>
+                <li><a href="RoyalHistory.html" class="nav-link">Історія</a></li>
+                <li><a href="RoyalGallery.html" class="nav-link">Галерея</a></li> 
+                <li><a href="RoyalTime.html" class="nav-link">Розклад</a></li>
+                <li><a href="RoyalContact.html" class="nav-link">Контакти</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <div class="container">
+                <div class="text-block">
+                    <span class="gold-subtitle">EST. 2025</span>
+                    <h3 class="section-title">Royal Team: Сила в Дисципліні</h3>
+                    <p><strong>Royal Team Taekwon-do (ITF)</strong> — це не просто спортивна секція, це кузня характеру в самому центрі Чернівців. Ми об'єднали традиції корейського бойового мистецтва з сучасними методами підготовки.</p>
+                    <p>Під керівництвом Павла Кузика ми виховуємо покоління, для якого «Незламний дух» — це не просто слова, а спосіб життя.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="why-us">
+                    <h4>Наші Пріоритети</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-award"></i>
+                            <h5>Стандарти ITF</h5>
+                            <p>Навчання за світовою програмою Міжнародної Федерації Таеквон-до.</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-users"></i>
+                            <h5>Для всіх вікових груп</h5>
+                            <p>Спеціалізовані групи для дітей від 5 років та дорослих 50+.</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-shield-alt"></i>
+                            <h5>Виховання характеру</h5>
+                            <p>Ми вчимо самоконтролю, повазі та вмінню захистити себе та близьких.</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-fist-raised"></i>
+                            <h5>Шлях чемпіона</h5>
+                            <p>Підготовка до змагань національного та міжнародного рівнів.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding text-center">
+            <div class="container">
+                <div class="text-block">
+                    <h4>Готові приєднатися до команди?</h4>
+                    <p>Перше тренування — це ваш перший крок до чорного паска.</p>
+                    <br>
+                    <a href="registration.html" class="button-gold">Стати частиною клубу</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="coach-quote">
+            <div class="container">
+                <div class="text-block">
+                    <blockquote>
+                        «Таеквон-до вчить перемагати не лише на татамі, але й у власних думках.»
+                        <cite>ROYAL TEAM PHILOSOPHY</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Royal Team Taekwon-do. Всі права захищені.</p>
+            <div class="footer-contacts">
+                <a href="tel:+380666221983"><i class="fas fa-phone"></i> +380 66 622 19 83</a>
+                <a href="https://www.instagram.com/pavlokuzyktkd" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Простий скрипт для мобільного меню
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav-list');
+        
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

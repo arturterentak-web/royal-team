@@ -1,0 +1,581 @@
+/* ========================================================= */
+/* 0. ГЛОБАЛЬНІ НАЛАШТУВАННЯ ТА ЗМІННІ */
+/* ========================================================= */
+:root {
+    --royal-blue: #040D3E;        /* Дуже глибокий синій, майже чорнильний */
+    --gold: #FFC300;              /* Яскраво-золотий */
+    --dark-bg: #111;              /* Чорний для контрасту */
+    --light-bg: #F8F8F8;          /* Світло-сірий фон */
+    --text-color: #333;
+    --transition: all 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg); 
+}
+a { text-decoration: none; color: var(--royal-blue); }
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/* Стилі заголовків H3 та секцій */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    color: var(--royal-blue);
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    font-size: 36px;
+    letter-spacing: 2px;
+    position: relative;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gold);
+    margin: 10px auto 0;
+}
+
+/* ========================================================= */
+/* 1. HEADER ТА НАВІГАЦІЯ */
+/* ========================================================= */
+header {
+    background: var(--royal-blue);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.header-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo { 
+    display: flex; 
+    align-items: center; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px; 
+    font-weight: 900; 
+    color: white;
+}
+.logo-image {
+    height: 40px; 
+    margin-right: 10px;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.9));
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+.nav-list a {
+    color: white;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+.nav-list a:hover {
+    color: var(--gold); 
+    background-color: rgba(255, 195, 0, 0.1);
+}
+
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ========================================================= */
+/* 2. СТИЛІ КНОПОК ТА ЦЕНТРУ ДІЙ */
+/* ========================================================= */
+.button-gold {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 30px; 
+    background: var(--gold); 
+    color: var(--royal-blue); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+.button-gold:hover {
+    background: var(--royal-blue);
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    transform: translateY(-3px);
+}
+.button-blue-gold {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 30px; 
+    background: var(--royal-blue); 
+    color: var(--gold); 
+    border: 2px solid var(--gold);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+.button-blue-gold:hover {
+    background: var(--gold);
+    color: var(--royal-blue);
+    transform: translateY(-3px);
+}
+.action-center {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* ========================================================= */
+/* 3. СТИЛІ ДЛЯ index.html (HERO, ЦІННОСТІ, ЦИТАТА) */
+/* ========================================================= */
+.dynamic-impact {
+    background: url('hero_background_new.jpg') no-repeat center center/cover; 
+    height: 700px; 
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.dynamic-impact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(4, 13, 62, 0.85); 
+    z-index: 1;
+}
+.dynamic-impact .container { z-index: 2; }
+.hero-text-box {
+    max-width: 650px;
+    color: white;
+    padding: 30px;
+    border-left: 5px solid var(--gold);
+}
+.hero-text-box span { color: var(--gold); }
+.hero-text-box h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px; 
+    font-weight: 900;
+}
+
+/* Цінності */
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px;
+    text-align: center;
+}
+.value-item {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--royal-blue);
+    transition: var(--transition);
+}
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-circle i { font-size: 36px; color: var(--royal-blue); }
+.value-item h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--royal-blue);
+}
+
+/* Цитата Тренера */
+.coach-quote {
+    background-color: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+    border-top: 5px solid var(--gold);
+    border-bottom: 5px solid var(--gold);
+}
+.coach-quote blockquote {
+    font-size: 26px;
+    font-style: italic;
+    color: white;
+}
+.coach-quote cite { color: var(--gold); }
+
+
+/* ========================================================= */
+/* 4. СТИЛІ ДЛЯ "ПРО КЛУБ" (about.html) */
+/* ========================================================= */
+
+.about-section {
+    background-color: white; 
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.about-content h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--royal-blue);
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 5px;
+}
+
+.why-us {
+    background: var(--light-bg); 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.why-us ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.why-us li {
+    font-size: 17px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--royal-blue);
+}
+
+.why-us li i {
+    color: var(--gold);
+    margin-right: 10px;
+}
+
+/* ========================================================= */
+/* 5. СТИЛІ ДЛЯ "ТРЕНЕРИ" (coaches.html) */
+/* ========================================================= */
+
+.coaches-section {
+    background-color: white;
+}
+
+.main-coach {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 80px;
+    padding: 30px;
+    background: var(--light-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.coach-photo {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 5px solid var(--gold);
+    flex-shrink: 0; 
+}
+
+.coach-info h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    color: var(--royal-blue);
+}
+
+.coach-info .rank {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--royal-blue);
+    padding-bottom: 5px;
+}
+
+.achievements {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 25px;
+}
+
+.achievements li i {
+    color: var(--gold);
+    margin-right: 10px;
+}
+
+.secondary-title {
+    margin-top: 50px;
+    font-size: 30px;
+    color: var(--text-color);
+}
+.secondary-coaches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.secondary-coach {
+    background: #fcfcfc;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.coach-photo-small {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--royal-blue);
+}
+
+.secondary-coach h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    color: var(--royal-blue);
+}
+
+.rank-small {
+    display: block;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* ========================================================= */
+/* 6. СТИЛІ ДЛЯ "ІСТОРІЯ ТАЕКВОН-ДО" (history.html) */
+/* ========================================================= */
+
+.history-section {
+    background-color: white;
+}
+
+.history-content h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--gold); 
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--royal-blue);
+    padding-bottom: 5px;
+}
+.history-content p {
+    font-size: 17px;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+/* Стиль для Цитати */
+.history-content blockquote {
+    font-style: italic;
+    font-size: 20px;
+    border-left: 5px solid var(--gold);
+    padding: 15px 20px;
+    margin: 30px 0;
+    color: var(--royal-blue);
+    background-color: var(--light-bg);
+    border-radius: 5px;
+}
+.history-content blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+/* Стилі для Хронології (Timeline) */
+.historical-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 40px;
+    padding-left: 20px;
+    border-left: 2px solid var(--light-bg);
+}
+.timeline-item {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 25px;
+    position: relative;
+}
+.timeline-item i {
+    font-size: 24px;
+    color: var(--royal-blue);
+    position: absolute;
+    left: -35px; 
+}
+.timeline-year {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--gold);
+    width: 120px;
+    flex-shrink: 0;
+}
+.timeline-text {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* ========================================================= */
+/* 7. ФУТЕР */
+/* ========================================================= */
+footer {
+    background: var(--royal-blue);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 5px solid var(--gold);
+}
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer-contacts a {
+    color: var(--gold);
+    margin-left: 20px;
+    font-weight: 600;
+}
+.footer-contacts i {
+    margin-right: 5px;
+}
+footer p {
+    font-size: 0.9em;
+    margin-bottom: 10px; 
+}
+
+
+/* ========================================================= */
+/* 8. АДАПТИВНІСТЬ (Мобільний дизайн) */
+/* ========================================================= */
+@media (max-width: 992px) {
+    
+    /* Мобільна навігація */
+    .menu-toggle {
+        display: block; 
+    }
+    .nav-list {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        background: var(--royal-blue);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    }
+    .nav-list.active {
+        display: flex; 
+    }
+    .nav-list li {
+        text-align: center;
+        width: 100%;
+        border-top: 1px solid rgba(255, 195, 0, 0.2);
+    }
+    .nav-list a {
+        display: block;
+        padding: 15px;
+    }
+    
+    /* Адаптація сіток */
+    .value-grid {
+        grid-template-columns: 1fr; 
+    }
+    .about-content {
+        grid-template-columns: 1fr; 
+    }
+    
+    .section-title {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+    
+    /* Адаптивність для Тренерів */
+    .main-coach {
+        flex-direction: column; 
+        text-align: center;
+    }
+    .coach-info {
+        text-align: left;
+    }
+    .coach-info .rank {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .coach-photo {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    /* Адаптивність для Історії */
+    .historical-timeline {
+        padding-left: 10px;
+        border-left: none;
+    }
+    .timeline-item i {
+        display: none; 
+    }
+    .timeline-year {
+        width: 80px;
+        font-size: 18px;
+    }
+    
+    /* Футер */
+    footer .container {
+        flex-direction: column;
+    }
+    .footer-contacts {
+        margin-top: 15px;
+    }
+}
+@media (max-width: 600px) {
+    .hero-text-box h2 {
+        font-size: 38px;
+    }
+}

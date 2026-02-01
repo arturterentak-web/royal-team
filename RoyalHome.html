@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Team Taekwon-do | Шлях Чемпіона (Чернівці)</title>
+    <link rel="stylesheet" href="RoyalHome.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <h1 class="logo">
+                <img src="logo.jpg" alt="Логотип Royal Team" class="logo-image">
+                Royal Team
+            </h1>
+            
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-list">
+                <li><a href="RoyalHome.html" class="nav-link">Головна</a></li>
+                <li><a href="RoyalClub.html" class="nav-link">Про Клуб</a></li>
+                <li><a href="RoyalCoach.html" class="nav-link">Тренер</a></li>
+                <li><a href="#RoyalHistory.html" class="nav-link">Історія Таеквон-до</a></li>
+                <li><a href="RoyalGalerry.html" class="nav-link">Галерея</a></li> 
+                <li><a href="RoyalTime.html" class="nav-link">Розклад</a></li>
+                <li><a href="RoyalContact.html" class="nav-link">Контакти</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero dynamic-impact">
+            <div class="container">
+                <div class="hero-text-box">
+                    <span>🥋 Taekwon-do ITF у Чернівцях</span>
+                    <h2>Перемагайте За Королівськими Правилами</h2>
+                    <p>Дисципліна, сила, честь. Почніть свій шлях до досконалості з Royal Team.</p>
+                    <a href="registration.html" class="button button-gold">Записатися на пробне тренування</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="values" class="section-padding values-section">
+            <div class="container">
+                <h3 class="section-title">Наш Шлях до Досконалості</h3>
+                <div class="value-grid">
+                    <div class="value-item">
+                        <div class="icon-circle"><i class="fas fa-medal"></i></div>
+                        <h4>Професійний Рівень</h4>
+                        <p>Навчання за світовими стандартами ITF. Ми готуємо призерів національних та міжнародних змагань.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="icon-circle"><i class="fas fa-shield-alt"></i></div>
+                        <h4>Королівська Дисципліна</h4>
+                        <p>Виховання характеру та дотримання кодексу честі – ключові принципи нашого клубу.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="icon-circle"><i class="fas fa-users"></i></div>
+                        <h4>Royal Team Сім'я</h4>
+                        <p>Приналежність до елітної команди та підтримка, яка веде до досконалості.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section-padding coach-quote bg-dark">
+            <div class="container">
+                <blockquote>
+                    "Кожен великий шлях починається з першого кроку. У Royal Team ми не просто тренуємо удари, ми формуємо чемпіонів життя."
+                    <cite>- Тренер Павло Кузик</cite>
+                </blockquote>
+                <a href="RoyalCoach.html" class="button button-blue-gold">Познайомитися з тренером</a>
+            </div>
+        </section>
+
+        <section class="section-padding gallery-preview">
+            <div class="container">
+                <h3 class="section-title">⚔️ Моменти Royal Team</h3>
+                <div class="gallery-grid">
+                    <a href="link_to_instagram_post_1" target="_blank" class="gallery-item">
+                        <img src="спаринг.jpg" alt="Змагання" loading="lazy">
+                    </a>
+                    <a href="link_to_instagram_post_2" target="_blank" class="gallery-item">
+                        <img src="тренування.jpg" alt="Тренування" loading="lazy">
+                    </a>
+                    <a href="link_to_instagram_post_3" target="_blank" class="gallery-item">
+                        <img src="наш клуб.jpg" alt="Команда" loading="lazy">
+                    </a>
+                </div>
+                <div class="action-center">
+                    <a href="https://www.instagram.com/pavlokuzyktkd?igsh=YXUxa2Z6cTJ6bGJn" class="button button-gold">Більше Моментів</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Royal Team Taekwon-do | Чернівці, Україна.</p>
+            <div class="footer-contacts">
+                <a href="tel:+380666221983"><i class="fas fa-phone"></i> +38 (066) 622-19-83</a>
+                <a href="https://www.instagram.com/pavlokuzyktkd" target="_blank"><i class="fab fa-instagram"></i> @pavlokuzyktkd</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-list').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

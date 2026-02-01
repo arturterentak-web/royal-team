@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про Клуб Royal Team | Taekwon-do ITF</title>
+    <link rel="stylesheet" href="RoyalClub.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <h1 class="logo">
+                <img src="Logo.jpg" alt="Логотип Royal Team" class="logo-image">
+                Royal Team
+            </h1>
+            
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-list">
+                <li><a href="RoyalHome.html" class="nav-link">Головна</a></li>
+                <li><a href="RoyalClub.html" class="nav-link">Про Клуб</a></li>
+                <li><a href="RoyalCoach.html" class="nav-link">Тренер</a></li>
+                <li><a href="RoyalHistory.html" class="nav-link">Історія Таеквон-до</a></li>
+                <li><a href="RoyalGallery.html" class="nav-link">Галерея</a></li> 
+                <li><a href="RoyalTime.html" class="nav-link">Розклад</a></li>
+                <li><a href="RoyalContact.html" class="nav-link">Контакти</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="section-padding about-section">
+            <div class="container">
+                <h3 class="section-title">🏆 Про Royal Team: Шлях Чемпіонів</h3>
+                
+                <div class="about-content">
+                    
+                    <div class="text-block">
+                        <h4>Наша Місія: Формування Незламного Духу</h4>
+                        <p><strong>Royal Team Taekwon-do (ITF)</strong> – це більше, ніж просто спортивний клуб. Ми є елітною командою, присвяченою вихованню не просто спортсменів, а справжніх Чемпіонів життя. Наша місія полягає у передачі глибоких принципів Таеквон-до: Ввічливість, Чесність, Наполегливість, Самовладання та Незламний Дух.</p>
+                        <p>Ми віримо, що істинна сила спортсмена полягає не лише в техніці, а й у характері. Під керівництвом Павла Кузика – досвідченого тренера та майстра, ми створюємо середовище, де дисципліна веде до майстерності, а наполегливість – до перемоги.</p>
+                        <p>Наш клуб розташований у самому серці Чернівців і має професійно обладнаний зал для тренувань.</p>
+                    </div>
+
+                    <div class="why-us">
+                        <h4>Чому Royal Team?</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Професійний Рівень Підготовки: Ми навчаємо за світовими стандартами Міжнародної Федерації Таеквон-до (ITF). Наші учні регулярно стають призерами та чемпіонами змагань.</li>
+                            <li><i class="fas fa-check-circle"></i> Від 5 до 50+ років: Програми розроблені для будь-якого віку та рівня підготовки, від початківців до досвідчених спортсменів.</li>
+                            <li><i class="fas fa-check-circle"></i> Королівська Дисципліна: Виховуємо почуття честі, дисципліни та вміння контролювати свої емоції.</li>
+                            <li><i class="fas fa-check-circle"></i> Royal Team – Це Сім'я: Будуємо міцну спільноту, де підтримка веде до досконалості.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="action-center">
+                    <a href="registration.html" class="button button-gold">Записатися на пробне заняття</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding coach-quote bg-dark">
+            <div class="container">
+                <blockquote>
+                    Таеквон-до – це мистецтво, яке вчить перемагати не лише на татамі, але й у житті.
+                    <cite>- Royal Team</cite>
+                </blockquote>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Royal Team Taekwon-do | Чернівці, Україна.</p>
+            <div class="footer-contacts">
+                <a href="tel:+380666221983"><i class="fas fa-phone"></i> +38 (066) 622-19-83</a>
+                <a href="https://www.instagram.com/pavlokuzyktkd" target="_blank"><i class="fab fa-instagram"></i> @pavlokuzyktkd</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-list').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
