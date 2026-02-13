@@ -1,0 +1,283 @@
+:root {
+    --royal-blue: #040D3E;        
+    --gold: #FFC300;              
+    --dark-bg: #111;              
+    --light-bg: #F8F8F8;            
+    --text-color: #333;
+    --transition: all 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg); 
+}
+a { text-decoration: none; color: var(--royal-blue); }
+
+.container {
+    width: 90%; /* Змінено для кращого вигляду на малих екранах */
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-padding {
+    padding: 60px 0; /* Зменшено відступи для мобільних (було 100px) */
+}
+
+/* Стилі заголовків H3 та секцій */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    color: var(--royal-blue);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-size: 28px; /* Адаптивний розмір за замовчуванням */
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gold);
+    margin: 10px auto 0;
+}
+
+/* ========================================================= */
+/* 2. HEADER ТА НАВІГАЦІЯ */
+/* ========================================================= */
+header {
+    background: var(--royal-blue);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.header-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo { 
+    display: flex; 
+    align-items: center; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px; 
+    font-weight: 900; 
+    color: white;
+}
+.logo-image {
+    height: 35px; 
+    margin-right: 10px;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.9));
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+.nav-list a {
+    color: white;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+.nav-list a:hover {
+    color: var(--gold); 
+    background-color: rgba(255, 195, 0, 0.1);
+}
+
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ========================================================= */
+/* 3. HERO SECTION */
+/* ========================================================= */
+.dynamic-impact {
+    background: url('hero_background_new.jpg') no-repeat center center/cover; 
+    min-height: 500px; 
+    height: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+.dynamic-impact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(4, 13, 62, 0.85); 
+    z-index: 1;
+}
+.dynamic-impact .container { z-index: 2; }
+
+.hero-text-box {
+    max-width: 650px;
+    color: white;
+    padding: 20px;
+    border-left: 5px solid var(--gold);
+}
+.hero-text-box h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px; 
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+/* Стилі кнопок */
+.button-gold, .button-blue-gold {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 30px; 
+    transition: var(--transition);
+    text-align: center;
+}
+.button-gold { background: var(--gold); color: var(--royal-blue); }
+.button-blue-gold { background: var(--royal-blue); color: var(--gold); border: 2px solid var(--gold); }
+
+/* ========================================================= */
+/* 4. СІТКИ (ГРИДИ) */
+/* ========================================================= */
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+.secondary-coaches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* ========================================================= */
+/* 5. ТРЕНЕРИ ТА КАРТКИ */
+/* ========================================================= */
+.main-coach {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 30px;
+    background: var(--light-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+.coach-photo {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 5px solid var(--gold);
+}
+
+/* ========================================================= */
+/* 6. ФУТЕР */
+/* ========================================================= */
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ========================================================= */
+/* МЕДІА ЗАПИТИ (АДАПТИВНІСТЬ) */
+/* ========================================================= */
+
+/* --- Планшети (до 992px) --- */
+@media (max-width: 992px) {
+    .value-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-text-box h2 { font-size: 48px; }
+    .main-coach { gap: 20px; }
+    .coach-photo { width: 250px; height: 320px; }
+}
+
+/* --- Телефони та малі планшети (до 768px) --- */
+@media (max-width: 768px) {
+    .section-padding { padding: 50px 0; }
+    .section-title { font-size: 28px; }
+
+    /* Мобільне меню */
+    .menu-toggle { display: block; }
+    
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--royal-blue);
+        padding: 20px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-list.active { display: flex; }
+    .nav-list li { margin: 10px 0; }
+
+    /* Hero Section мобільна */
+    .hero-text-box h2 { font-size: 32px; }
+    .hero-text-box p { font-size: 16px; }
+
+    /* Головний тренер мобільна */
+    .main-coach {
+        flex-direction: column;
+        text-align: center;
+    }
+    .coach-photo {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .rank::after { left: 50%; transform: translateX(-50%); }
+
+    /* Сітка цінностей мобільна */
+    .value-grid { grid-template-columns: 1fr; }
+
+    /* Футер мобільна */
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-contacts a { margin: 10px; display: block; }
+}
+
+/* --- Малі телефони (до 480px) --- */
+@media (max-width: 480px) {
+    .section-title { font-size: 24px; }
+    .hero-text-box h2 { font-size: 28px; }
+    .logo { font-size: 20px; }
+    .coach-info h2 { font-size: 26px; }
+}

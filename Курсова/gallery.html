@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Gold Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #050505;
+            margin: 0;
+            padding: 0;
+            color: #d4af37;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- ОНОВЛЕНЕ МЕНЮ --- */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5, 5, 5, 0.95);
+            border-bottom: 1px solid #d4af3733;
+            z-index: 1000;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Кнопка бургера (тільки для мобільних) */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #d4af37;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            gap: 25px;
+            transition: 0.4s ease;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #d4af37;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            text-shadow: 0 0 10px #d4af37;
+            opacity: 0.8;
+        }
+
+        /* ЛІВА ПАНЕЛЬ */
+        .gold-side {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 20%;
+            height: 100vh;
+            background: linear-gradient(145deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            border-right: 3px solid #8a6d3b;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gold-side::after {
+            content: "ROYAL";
+            writing-mode: vertical-rl;
+            font-family: 'Cinzel', serif;
+            font-size: 4vw;
+            letter-spacing: 20px;
+            color: rgba(0, 0, 0, 0.2);
+            transform: rotate(180deg);
+        }
+
+        /* ПРАВА ПАНЕЛЬ */
+        .image-side {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 20%;
+            height: 100vh;
+            background: url('Logo.jpg') center/cover no-repeat;
+            border-left: 3px solid #d4af37;
+            z-index: 1;
+        }
+
+        .image-side::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* ЦЕНТРАЛЬНА СТРІЧКА */
+        .gallery-feed {
+            max-width: 550px;
+            margin: 0 auto;
+            padding: 120px 20px 80px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .club-logo {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            letter-spacing: 8px;
+            margin-bottom: 50px;
+            text-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .post-card {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 1px solid #d4af3733;
+        }
+
+        .post-details {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .post-details h3 {
+            font-family: 'Cinzel', serif;
+            margin: 0 0 10px 0;
+            color: #d4af37;
+            font-size: 1.2rem;
+        }
+
+        .post-details p {
+            color: #888;
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* --- МЕДІА ЗАПИТИ ДЛЯ АДАПТИВНОСТІ --- */
+
+        /* Планшети та ноутбуки (до 1200px) */
+        @media (max-width: 1200px) {
+            .gold-side::after { font-size: 5vw; }
+            .nav-list { gap: 15px; }
+            .nav-link { font-size: 0.75rem; }
+        }
+
+        /* Малі планшети та великі телефони (до 992px) */
+        @media (max-width: 992px) {
+            .gold-side, .image-side { display: none; }
+            .gallery-feed { max-width: 700px; }
+            .club-logo { font-size: 2rem; }
+        }
+
+        /* Мобільні пристрої (до 768px) */
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.98);
+                padding: 20px 0;
+                border-bottom: 1px solid #d4af3733;
+                text-align: center;
+            }
+
+            .nav-list.active {
+                display: flex;
+            }
+
+            .nav-list li {
+                margin: 10px 0;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+                display: block;
+                padding: 10px;
+            }
+
+            .gallery-feed {
+                padding-top: 100px;
+            }
+
+            .club-logo {
+                font-size: 1.8rem;
+                letter-spacing: 5px;
+            }
+
+            .post-details h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Дуже малі екрани */
+        @media (max-width: 480px) {
+            .gallery-feed { padding-left: 15px; padding-right: 15px; }
+            .club-logo { font-size: 1.5rem; }
+            .post-details { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <button class="menu-toggle" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav-list" id="nav-menu">
+            <li><a href="index.html" class="nav-link">Головна</a></li>
+            <li><a href="royalteam.html" class="nav-link">Про Клуб</a></li>
+            <li><a href="royaltrener.html" class="nav-link">Тренер</a></li>
+            <li><a href="tkdhistory.html" class="nav-link">Історія Таеквон-до</a></li>
+            <li><a href="gallery.html" class="nav-link">Галерея</a></li>
+            <li><a href="royalcontoct.html" class="nav-link">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <div class="gold-side"></div>
+    <div class="image-side"></div>
+
+    <div class="gallery-feed">
+        <div class="club-logo">ROYAL CLUB</div>
+
+        <article class="post-card">
+            <img class="post-image" src="UcraineCup.jpg" alt="Кубок України">
+            <div class="post-details">
+                <h3>Кубок України 2025</h3>
+                <p>Тріумф на Кубку України: результат залізної дисципліни та незламного духу.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img class="post-image" src="Drago25.jpg" alt="Драгобрат 2025">
+            <div class="post-details">
+                <h3>Тренувальні Збори Драгобрат 2025</h3>
+                <p>Команда на тренувальних зборах. Заряджені на новий сезон!</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img class="post-image" src="ChampionIv.jpg" alt="Чемпіонат">
+            <div class="post-details">
+                <h3>Чемпіонат Івано-Франківська</h3>
+                <p>Наші юні тигри після вдалих виступів. Кожна медаль — це години поту в залі.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img class="post-image" src="Photosesion.jpg" alt="Фотосесія 1">
+            <div class="post-details">
+                <h3>Фотосесія чорнх поясів</h3>
+                <p>Taekwon-do — це не лише спорт, це естетика кожного удару.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img class="post-image" src="Photosesion2.jpg" alt="Фотосесія 2">
+            <div class="post-details">
+                <h3>Фотосесія Разом</h3>
+                <p>Різні пояси — одна пристрасть. Формуємо характер разом.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img class="post-image" src="Drago24.jpg" alt="Драгобрат 2024">
+            <div class="post-details">
+                <h3>Тренувальні Збори Драгобрат 2024</h3>
+                <p>Тренування на висоті — це виклик, який робить нас сильнішими.</p>
+            </div>
+        </article>
+    </div>
+
+    <script>
+        // Скрипт для керування мобільним меню
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            // Зміна іконки при натисканні
+            const icon = menuBtn.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Закриття меню при кліку на посилання
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+                menuBtn.querySelector('i').classList.remove('fa-times');
+            });
+        });
+    </script>
+
+</body>
+</html>

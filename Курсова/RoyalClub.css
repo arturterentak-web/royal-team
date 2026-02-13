@@ -1,0 +1,264 @@
+/* ========================================================= */
+/* ROYAL CLUB - ELITE CHAMPION STYLE */
+/* ========================================================= */
+
+:root {
+    --bg-dark: #05070a;      /* Глибокий чорний */
+    --card-bg: #0f121a;      /* Колір блоків */
+    --gold: #c5a059;         /* Благородне золото */
+    --white: #ffffff;
+    --text-muted: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--white);
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background: radial-gradient(circle at top right, #0a1333 0%, #05070a 40%);
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================================= */
+/* 1. HEADER & LOGO FIX (Виправлення твоєї панелі) */
+/* ========================================================= */
+header {
+    background: rgba(5, 7, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--gold);
+    padding: 10px 0;
+    position: fixed; /* Фіксуємо зверху */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.logo-image {
+    height: 50px; /* ЛОГО ТЕПЕР НОРМАЛЬНОГО РОЗМІРУ */
+    width: auto;
+    border-radius: 5px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--gold);
+}
+
+/* Бургер-меню для мобілок */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ========================================================= */
+/* 2. MAIN CONTENT (ABOUT SECTION) */
+/* ========================================================= */
+main {
+    padding-top: 100px; /* Щоб шапка не перекривала текст */
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    text-align: center;
+    color: var(--gold);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Текст ширше, список вужче */
+    gap: 40px;
+    align-items: start;
+    text-align: left;
+}
+
+.text-block h4, .why-us h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--gold);
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.text-block p {
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 17px;
+}
+
+/* Список "Чому ми" */
+.why-us ul {
+    list-style: none;
+}
+
+.why-us li {
+    background: var(--card-bg);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--gold);
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.why-us li:hover {
+    transform: translateX(10px);
+    background: #161a24;
+}
+
+.why-us i {
+    color: var(--gold);
+    margin-right: 10px;
+}
+
+/* Кнопка дії */
+.action-center {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.button-gold {
+    background: var(--gold);
+    color: var(--bg-dark);
+    padding: 20px 40px;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+
+.button-gold:hover {
+    background: var(--white);
+    transform: scale(1.05);
+}
+
+/* ========================================================= */
+/* 3. COACH QUOTE */
+/* ========================================================= */
+.coach-quote {
+    background: var(--card-bg);
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    text-align: center;
+}
+
+blockquote {
+    font-size: 24px;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+cite {
+    display: block;
+    margin-top: 15px;
+    color: var(--gold);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ========================================================= */
+/* 4. FOOTER */
+/* ========================================================= */
+footer {
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-contacts {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-contacts a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* ========================================================= */
+/* 5. Мобільна адаптація */
+/* ========================================================= */
+@media (max-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none; /* Ховаємо для скрипта */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-dark);
+        padding: 20px;
+        border-bottom: 2px solid var(--gold);
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+}

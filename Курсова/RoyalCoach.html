@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренери Royal Team | Taekwon-do ITF</title>
+    <link rel="stylesheet" href="RoyalCoach.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <h1 class="logo">
+                <img src="logo.jpg" alt="Логотип Royal Team" class="logo-image">
+                Royal Team
+            </h1>
+            
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Головна</a></li>
+                <li><a href="royalclub.html" class="nav-link">Про Клуб</a></li>
+                <li><a href="royalcoach.html" class="nav-link">Тренер</a></li>
+                <li><a href="royalhistory.html" class="nav-link">Історія Таеквон-до</a></li>
+                <li><a href="gallery.html" class="nav-link">Галерея</a></li>
+                <li><a href="royalcontact.html" class="nav-link">Контакти</a></li>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="section-padding coaches-section">
+            <div class="container">
+                <h3 class="section-title">👨‍🏫 Керівництво Royal Team</h3>
+                
+                <div class="coach-card main-coach">
+                    <img src="паша.jpg" alt="Павло Кузик - Головний Тренер" class="coach-photo">
+                    <div class="coach-info">
+                        <h2>Павло Кузик</h2>
+                        <span class="rank">Головний Тренер Royal Team / Майстер Taekwon-do ITF</span>
+                        
+                        <p>Павло Кузик – серце та душа нашого клубу. Його багаторічний досвід у Taekwon-do ITF, підкріплений високою кваліфікацією та незмінною відданістю, робить його наставником, якому довіряють батьки та поважають учні.</p>
+                        <p>Він поєднує строгу дисципліну бойового мистецтва з індивідуальним підходом до кожного спортсмена, допомагаючи їм розкрити свій максимальний потенціал як на татамі, так і в повсякденному житті.</p>
+                        
+                        <ul class="achievements">
+                            <li><i class="fas fa-medal"></i> Член збірної України з Таеквон-до ITF</li>
+                            <li><i class="fas fa-award"></i> Багаторазовий призер Національних та Міжнародних чемпіонатів</li>
+                            <li><i class="fas fa-certificate"></i> Сертифікований інструктор ITF</li>
+                            <li><i class="fas fa-users"></i> Тренер переможців та призерів Кубків України</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="action-center">
+                    <a href="https://www.instagram.com/pavlokuzyktkd" class="button button-blue-gold">Задати питання тренеру</a>
+                </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Royal Team Taekwon-do | Чернівці, Україна.</p>
+            <div class="footer-contacts">
+                <a href="tel:+380666221983"><i class="fas fa-phone"></i> +38 (066) 622-19-83</a>
+                <a href="https://www.instagram.com/pavlokuzyktkd" target="_blank"><i class="fab fa-instagram"></i> @pavlokuzyktkd</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-list').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
